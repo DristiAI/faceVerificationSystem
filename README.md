@@ -1,4 +1,7 @@
-# faceVerificationSystem
+# faceVerificationSystem 
+
+Note : The complete code will be hosted on my gitlab repo[Private]  due some privacy terms
+
 Immediate tasks
 - [x] all primary code completed 
 - [ ]  testing
