@@ -42,11 +42,11 @@ SIAMESE_NET2_out = model(INPUT2)
 
 #output is the euclidean distance of the two inputs
 
-output = Lambda(euclidean_distance)[SIAMESE_NET1_out,siamese_NET2_out]
+output = Lambda(euclidean_distance)([SIAMESE_NET1_out,SIAMESE_NET2_out])
 
 my_Callback = ModelCheckpoint(filepath='./models/MODEL-{epoch:2d}-{val_acc:0.02f}.hdf5')
 MODEL = Model(inputs= [INPUT1,INPUT2], outputs= [output])
 MODEL.compile(loss=contrastive_loss, optimizer='adamax',metrics=['accuracy'])
-MODEL.fit([T_INPUT[:,0],T_INPUT[:,1],T_LABELS,batch_size=128,epochs=20,\
-          validation_data=([V_INPUT[:,0],V_INPUT[:,1]],V_LABELS),\
+MODEL.fit([T_INPUT[:,0],T_INPUT[:,1]],T_LABELS,batch_size=128,epochs=20,
+          validation_data=([V_INPUT[:,0],V_INPUT[:,1]],V_LABELS),
           callbacks=my_Callback)
