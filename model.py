@@ -44,8 +44,8 @@ def contrastive_loss(y_1,y_2,margin=1):
     return K.mean((1-y_true)*K.square(y_pred)+(y_true)*K.square(K.maximum(margin-y_pred,0)))
 
 
-def euclidean_distance(y1,y2):
-    
+def euclidean_distance(y):
+    y1,y2 = y
     return K.sqrt(K.sum(K.square(y1-y2),axis=1,keepdims=True))
     
 
