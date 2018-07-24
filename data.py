@@ -14,6 +14,11 @@ VALIDATION = './val'
 TEST_PATH = './test'
 
 
+NUM_CLASSES = 32
+IMAGE_IN_A_CLASS =10
+INPUT_SHAPE= (56,46,1)
+
+
 def create_paths(*paths):
     """
     create paths 
