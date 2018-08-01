@@ -1,3 +1,11 @@
+"""
+run the script
+press c to capture the detected face
+press q to quit
+or continue adding faces
+
+"""
+
 import numpy as np
 import cv2
 faceCascade = cv2.CascadeClassifier('cascades/haarcascade_frontalface_default.xml')
